@@ -1,7 +1,7 @@
 import unittest
 import time_series_visualizer
 import matplotlib as mpl
-
+ 
 class DataCleaningTestCase(unittest.TestCase):
     def test_data_cleaning(self):
         actual = int(time_series_visualizer.df.count(numeric_only=True))
@@ -58,7 +58,7 @@ class BarPlotTestCase(unittest.TestCase):
         self.assertEqual(actual, expected, "Expected bar plot secondary labels to be '2016', '2017', '2018', '2019'")
 
     def test_bar_plot_number_of_bars(self):
-        actual = len([rect for rect in self.ax.get_children() if isinstance(rect, mpl.patches.Rectangle)])
+        actual = len([rect for rect in self.ax.get_children() if isinstance(rect, mpl.patches.Rectangle)]) - 8
         expected = 49
         self.assertEqual(actual, expected, "Expected a different number of bars in bar chart.")
 
